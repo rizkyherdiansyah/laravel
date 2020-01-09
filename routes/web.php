@@ -56,3 +56,27 @@ Route::get('/pesan/{makan}/{minuman}/{harga}',function($mkn,$kopi,$harga) {
            '<br>Tambah Minuman <b>' . $kopi.
            '<br>Dengan Harga <b>' . $harga;
 });
+
+//Route Optional Parameter
+Route::get('/halo/{nama?}',function($nama='Pekoy') {
+    return 'Halo Nama Saya Adalah' .$nama;
+
+});
+
+Route::get('/pesanan/{makanan?}/{minuman?}/{harga?}',function($mkn=null,$mnm=null,$harga=null) {
+    if($mkn){
+        echo ' <b>Anda Memesan '. $mkn;
+    }
+    
+    if ($mnm){
+        echo  ' <b>& ' . $mnm;  
+    }
+
+    if($harga){
+        echo ' <b>Total Harganya : Rp.' . $harga;
+    }
+
+    if ($mkn == null & $mnm == null & $harga == null) {
+        echo '<b>Anda Belum Memesan Sesutau';
+    }
+});
