@@ -80,3 +80,50 @@ Route::get('/pesanan/{makanan?}/{minuman?}/{harga?}',function($mkn=null,$mnm=nul
         echo '<b>Anda Belum Memesan Sesutau';
     }
 });
+
+Route::get('/testmodel',function(){
+    $testmodel = App\Post::all();
+    return $testmodel;
+});
+
+Route::get('/testmodel1',function(){
+    $testmodel = App\Post::find(1);
+    return $testmodel;
+});
+
+Route::get('/testmodel2',function(){
+    $testmodel = App\Post::where('title','like','%Haruskah Menunda Nikah?%')->get();
+    return $testmodel;
+});
+
+Route::get('/testmodel3',function(){
+    $post = App\Post::find(1);
+    $post->title = "Ciri Keluarga Sakinah Warahmah";
+    $post->save();
+    return $post;
+});
+
+Route::get('/testmodel4',function(){
+    $post = App\Post::find(1);
+    $post->delete();
+    
+});
+
+Route::get('/testmodel5',function(){
+    $post = new App\Post;
+    $post->title = "Cara Ampuh Mencintai Dia";
+    $post->content = "Cinta,Senyum,Bikin Seneng,Sabar,Saling Ngerti,Dan Saling Support";
+    $post->save();
+    return $post;
+});
+
+Route::get('/gaji',function(){
+    $query = App\Penggajihan::all();
+    return $query;
+});
+
+
+
+
+
+
