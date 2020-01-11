@@ -122,6 +122,33 @@ Route::get('/gaji',function(){
     return $query;
 });
 
+Route::get('/data-gaji-1',function(){
+    $query = App\Penggajihan::where('agama','=','atheis')->get();
+    return $query;
+});
+
+Route::get('/data-gaji-2',function(){
+    $query = App\Penggajihan::select('id','nama','agama')
+    ->where('agama','=','islam')->get();
+    return $query;
+});
+
+Route::get('/data-gaji/{id}',function(){
+    $query = App\Penggajihan::findOrFail($id);
+    return $query;
+});
+
+Route::get('/tambah-data-gaji',function(){
+    $query = New App\Penggajihan();
+    $query->nama = 'Firminho';
+    $query->jabatan = 'Sekertaris';
+    $query->jk = 'Laki-Laki';
+    $query->alamat = 'Bojong Citepus';
+    $query->total_gaji = 'Rp.500000';
+    $query->agama = 'Islam';
+    $query->save();
+    return $query;
+});
 
 
 
