@@ -173,5 +173,14 @@ Route::get('book-edit/{id}/{jdl}','BooksController@edit');
 Route::get('book-delete/{id}','BooksController@delete');
 Route::get('koyy','BooksController@koy');
 
+//CRUD ARTIKEL
+// Route::get('artikel','ArtikelController@index');
+// Route::get('artikel/create','ArtikelController@create');
+// Route::POST('artikel','ArtikelController@store');
+// Route::get('artikel/{id}','ArtikelController@show');
+// Route::get('artikel/{id}/edit','ArtikelController@edit');
+// Route::PUT('artikel/{id}','ArtikelController@update');
+// Route::DELETE('artikel/{id}','ArtikelController@destroy');
+   Route::resource('artikel','ArtikelController');
 
 
