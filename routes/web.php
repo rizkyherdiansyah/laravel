@@ -181,6 +181,12 @@ Route::get('koyy','BooksController@koy');
 // Route::get('artikel/{id}/edit','ArtikelController@edit');
 // Route::PUT('artikel/{id}','ArtikelController@update');
 // Route::DELETE('artikel/{id}','ArtikelController@destroy');
-   Route::resource('artikel','ArtikelController');
+Route::resource('artikel','ArtikelController');
+
+//Passing Data
+Route::get('passing', 'PracticeController@pass');
+Route::get('passing1', 'PracticeController@pass1');
+Route::get('passing2', 'PracticeController@pass2');
+
 
 
