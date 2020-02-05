@@ -189,6 +189,23 @@ Route::get('passing1', 'PracticeController@pass1');
 Route::get('passing2', 'PracticeController@pass2');
 Route::get('barang', 'BarangController@index');
 
+//BOOK ROUTE
+Route::resource('buku', 'BooksController');
 
+//BARANG ROUTE
+Route::resource('barang', 'BarangController');
+
+//BLADE
+Route::get('home', function () {
+    return view('home');
+});
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('contact', function () {
+    return view('contact');
+});
 
 

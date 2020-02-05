@@ -10,7 +10,7 @@ class BooksController extends Controller
 {
     public function index(){
         $book = Books::all();
-        return $book;
+        return view('book.index', compact('book'));
     }
 
     public function create($judul){
@@ -27,8 +27,8 @@ class BooksController extends Controller
     }
 
     public function show($id){
-        $book = Books::find($id);
-        return $book;
+        $book = Books::findOrFail($id);
+        return view ('book.show', compact('book'));
     }
 
     public function edit($id,$judul){
